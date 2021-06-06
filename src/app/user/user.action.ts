@@ -9,31 +9,45 @@ import { SignUp } from './sign/sign-up/sign-up.interface';
 import { SignIn } from './sign/sign-in/sign-in.interface';
 
 export const signUpAction = createAction(
-  UserActionEnum.signUp,
+  UserActionEnum.SignUp,
   props<{signUp: SignUp}>()
 );
 
 export const signUpSuccessAction = createAction(
-  UserActionEnum.signUpSuccess,
+  UserActionEnum.SignUpSuccess,
   props<{user: User}>()
 );
 
 export const signUpFailureAction = createAction(
-  UserActionEnum.signUpFailure,
+  UserActionEnum.SignUpFailure,
   props<{errors: Errors}>()
 );
 
 export const signInAction = createAction(
-  UserActionEnum.signIn,
+  UserActionEnum.SignIn,
   props<{signIn: SignIn}>()
 );
 
 export const signInSuccessAction = createAction(
-  UserActionEnum.signInSuccess,
+  UserActionEnum.SignInSuccess,
   props<{user: User}>()
 );
 
 export const signInFailureAction = createAction(
-  UserActionEnum.signInFailure,
+  UserActionEnum.SignInFailure,
+  props<{errors: Errors}>()
+);
+
+export const getUserAction = createAction(
+  UserActionEnum.GetUser
+);
+
+export const getUserSuccessAction = createAction(
+  UserActionEnum.GetUserSuccess,
+  props<{user: User}>()
+);
+
+export const getUserFailureAction = createAction(
+  UserActionEnum.GetUserFailure,
   props<{errors: Errors}>()
 );

@@ -3,7 +3,8 @@ import { User } from './user.interface';
 
 export interface UserState {
   submitting: boolean;
-  user?: User;
+  loading?: boolean;
   signedIn?: boolean;
+  user?: User;
   errors?: Errors;
 }

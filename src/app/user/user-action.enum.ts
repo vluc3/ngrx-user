@@ -1,9 +1,13 @@
 export enum UserActionEnum {
-  signUp = '[User] Sign up',
-  signUpSuccess = '[User] Sign up success',
-  signUpFailure = '[User] Sign up failure',
+  SignUp = '[User] Sign up',
+  SignUpSuccess = '[User] Sign up success',
+  SignUpFailure = '[User] Sign up failure',
 
-  signIn = '[User] Sign in',
-  signInSuccess = '[User] Sign in success',
-  signInFailure = '[User] Sign in failure',
+  SignIn = '[User] Sign in',
+  SignInSuccess = '[User] Sign in success',
+  SignInFailure = '[User] Sign in failure',
+
+  GetUser = '[User] Get user',
+  GetUserSuccess = '[User] Get user success',
+  GetUserFailure = '[User] Get user failure',
 }

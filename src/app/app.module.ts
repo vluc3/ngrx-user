@@ -9,8 +9,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+
+import { NavBarModule } from './nav-bar/nav-bar.module';
 import { UserModule } from './user/user.module';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { UserModule } from './user/user.module';
     }),
     EffectsModule.forRoot([]),
     AppRoutingModule,
+    NavBarModule,
     UserModule,
   ],
   providers: [],

@@ -12,10 +12,30 @@ export const submittingSelector = createSelector(
   }
 );
 
-
 export const errorsSelector = createSelector(
   userFeatureSelector,
   (userState: UserState) => {
     return userState.errors;
+  }
+);
+
+export const signedInSelector = createSelector(
+  userFeatureSelector,
+  (userState: UserState) => {
+    return userState.signedIn;
+  }
+);
+
+export const signedOutSelector = createSelector(
+  userFeatureSelector,
+  (userState: UserState) => {
+    return ! userState.signedIn;
+  }
+);
+
+export const userSelector = createSelector(
+  userFeatureSelector,
+  (userState: UserState) => {
+    return userState.user;
   }
 );

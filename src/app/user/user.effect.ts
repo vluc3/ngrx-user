@@ -8,6 +8,7 @@ import { switchMap, catchError, map, tap } from 'rxjs/operators';
 
 import { signUpAction, signUpSuccessAction, signUpFailureAction } from './user.action';
 import { signInAction, signInSuccessAction, signInFailureAction } from './user.action';
+import { getUserAction, getUserSuccessAction, getUserFailureAction } from './user.action';
 
 import { StorageService } from '../common/service/storage.service';
 import { UserService } from './user.service';
@@ -64,7 +65,7 @@ export class UserEffect {
               }),
               catchError((errorResponse: HttpErrorResponse) => {
                 console.log('errorResponse:', errorResponse);
-                return of(signInFailureAction({errors: errorResponse.error.errors}));
+                return of(signInFailureAction({errors: errorResponse.error?.errors}));
               }
             )
           );
@@ -84,6 +85,33 @@ export class UserEffect {
     );
   },
   {dispatch: false});
+
+  getUser$ = createEffect(() => {
+    return this.actions$
+      .pipe(
+        ofType(getUserAction),
+        switchMap(() => {
+          const token: string = this.storageService.get('token');
+
+          if (! token) {
+            return of(getUserFailureAction(null));
+          }
+
+          return this.userService.getUser()
+            .pipe(
+              map((user: User) => {
+                return getUserSuccessAction({user});
+              }),
+              catchError((errorResponse: HttpErrorResponse) => {
+                console.log('errorResponse:', errorResponse);
+                return of(getUserFailureAction({errors: errorResponse.error?.errors}));
+              }
+            )
+          );
+        }
+      )
+    );
+  });
 
   constructor(
     private router: Router,

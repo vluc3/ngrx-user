@@ -25,7 +25,7 @@ export class UserService {
 
     return this.httpClient.post<UserResponse>(url, signUp)
       .pipe(
-        map(this.getUser)
+        map(this.getUserFromResponse)
       );
   }
 
@@ -34,11 +34,20 @@ export class UserService {
 
     return this.httpClient.post<UserResponse>(url, signIn)
       .pipe(
-        map(this.getUser)
+        map(this.getUserFromResponse)
       );
   }
 
-  private getUser(response: UserResponse): User {
+  getUser(): Observable<User> {
+    const url = `${environment.apiUrl}/user`;
+
+    return this.httpClient.get<UserResponse>(url)
+      .pipe(
+        map(this.getUserFromResponse)
+      );
+  }
+
+  private getUserFromResponse(response: UserResponse): User {
     return response.user;
   }
 }
