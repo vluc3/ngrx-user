@@ -13,7 +13,7 @@ import { getUserAction, getUserSuccessAction, getUserFailureAction } from './use
 import { StorageService } from '../common/service/storage.service';
 import { UserService } from './user.service';
 
-import { User } from './user.interface';
+import { User } from './user.model';
 
 @Injectable()
 export class UserEffect {

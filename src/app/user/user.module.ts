@@ -12,7 +12,7 @@ import { userReducer } from './user.reducer';
 import { StorageService } from '../common/service/storage.service';
 import { UserService } from './user.service';
 
-import { NestedSignComponent } from './sign/nested-sign/nested-sign.component';
+import { SignComponent } from './sign/sign/sign.component';
 import { SignUpComponent } from './sign/sign-up/sign-up.component';
 import { SignInComponent } from './sign/sign-in/sign-in.component';
 
@@ -25,7 +25,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    NestedSignComponent,
+    SignComponent,
     SignUpComponent,
     SignInComponent,
   ],

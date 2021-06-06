@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AbstractSignComponent } from '../abstract-sign/abstract-sign.component';
 
 import { signInAction } from '../../user.action';
-import { SignIn } from './sign-in.interface';
+import { SignIn } from './sign-in.model';
 
 @Component({
   selector: 'app-sign-in',

@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 
 import { UserSignTypeEnum } from '../../user-sign-type.enum';
 
-import { Errors } from '../../../common/interface/errors.interface';
+import { Errors } from '../../../common/model/errors.model';
 
 @Component({
-  selector: 'app-nested-sign',
-  templateUrl: './nested-sign.component.html',
-  styleUrls: ['./nested-sign.component.scss']
+  selector: 'app-sign',
+  templateUrl: './sign.component.html',
+  styleUrls: ['./sign.component.scss']
 })
-export class NestedSignComponent implements OnInit {
+export class SignComponent implements OnInit {
 
   @Input()
   userSignType: UserSignTypeEnum;

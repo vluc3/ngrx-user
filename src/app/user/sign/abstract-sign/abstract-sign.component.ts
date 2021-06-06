@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { UserSignTypeEnum } from '../../user-sign-type.enum';
 
-import { Errors } from '../../../common/interface/errors.interface';
+import { Errors } from '../../../common/model/errors.model';
 
 import { errorsSelector, submittingSelector } from '../../user.selector';
 
