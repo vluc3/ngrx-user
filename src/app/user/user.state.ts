@@ -1,4 +1,4 @@
-import { Errors } from '../common/type/errors.interface';
+import { Errors } from '../common/interface/errors.interface';
 import { User } from './user.interface';
 
 export interface UserState {

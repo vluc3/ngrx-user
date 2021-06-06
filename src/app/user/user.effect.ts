@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 import { switchMap, catchError, map, tap } from 'rxjs/operators';
 
 import { signUpAction, signUpSuccessAction, signUpFailureAction } from './user.action';
+import { signInAction, signInSuccessAction, signInFailureAction } from './user.action';
 
 import { StorageService } from '../common/service/storage.service';
 import { UserService } from './user.service';
@@ -42,6 +43,40 @@ export class UserEffect {
     return this.actions$
       .pipe(
         ofType(signUpSuccessAction),
+        tap(() => {
+          this.router.navigateByUrl('/');
+        }
+      )
+    );
+  },
+  {dispatch: false});
+
+  signIn$ = createEffect(() => {
+    return this.actions$
+      .pipe(
+        ofType(signInAction),
+        switchMap(({signIn}) => {
+          return this.userService.signIn(signIn)
+            .pipe(
+              map((user: User) => {
+                this.storageService.set('token', user.token);
+                return signInSuccessAction({user});
+              }),
+              catchError((errorResponse: HttpErrorResponse) => {
+                console.log('errorResponse:', errorResponse);
+                return of(signInFailureAction({errors: errorResponse.error.errors}));
+              }
+            )
+          );
+        }
+      )
+    );
+  });
+
+  signInSuccessRedirect$ = createEffect(() => {
+    return this.actions$
+      .pipe(
+        ofType(signInSuccessAction),
         tap(() => {
           this.router.navigateByUrl('/');
         }

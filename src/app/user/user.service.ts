@@ -6,10 +6,14 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { User } from './user.interface';
-import { SignUp } from './sign-up/sign-up.interface';
 import { UserResponse } from './user.response';
 
-@Injectable()
+import { SignUp } from './sign/sign-up/sign-up.interface';
+import { SignIn } from './sign/sign-in/sign-in.interface';
+
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
 
   constructor(
@@ -21,7 +25,20 @@ export class UserService {
 
     return this.httpClient.post<UserResponse>(url, signUp)
       .pipe(
-        map((response: UserResponse) => response.user)
+        map(this.getUser)
       );
+  }
+
+  signIn(signIn: SignIn): Observable<User> {
+    const url = `${environment.apiUrl}/users/login`;
+
+    return this.httpClient.post<UserResponse>(url, signIn)
+      .pipe(
+        map(this.getUser)
+      );
+  }
+
+  private getUser(response: UserResponse): User {
+    return response.user;
   }
 }

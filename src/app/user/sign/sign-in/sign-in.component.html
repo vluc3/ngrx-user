@@ -1,0 +1,9 @@
+<app-nested-sign
+  [userSignType]="userSignTypeEnum.In"
+  [redirectMessage]="'Need an account ?'"
+  [redirectUri]="'/sign-up'"
+  [form]="form"
+  [errors$]="errors$"
+  [submitting$]="submitting$"
+  (onSubmit)="onSubmit()">
+</app-nested-sign>

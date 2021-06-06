@@ -12,16 +12,22 @@ import { userReducer } from './user.reducer';
 import { StorageService } from '../common/service/storage.service';
 import { UserService } from './user.service';
 
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { NestedSignComponent } from './sign/nested-sign/nested-sign.component';
+import { SignUpComponent } from './sign/sign-up/sign-up.component';
+import { SignInComponent } from './sign/sign-in/sign-in.component';
+
 import { ErrorMessagesModule } from '../common/component/error-messages/error-messages.module';
 
 const routes: Routes = [
-  {path: 'sign-up', component: SignUpComponent}
+  {path: 'sign-up', component: SignUpComponent},
+  {path: 'sign-in', component: SignInComponent}
 ];
 
 @NgModule({
   declarations: [
-    SignUpComponent
+    NestedSignComponent,
+    SignUpComponent,
+    SignInComponent,
   ],
   imports: [
     CommonModule,
