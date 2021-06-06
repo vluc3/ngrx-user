@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 
 import { NavBarModule } from './nav-bar/nav-bar.module';
 import { UserModule } from './user/user.module';
+
+import { StorageService } from './common/service/storage.service';
+import { UserInterceptor } from './user/user.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,14 @@ import { UserModule } from './user/user.module';
     NavBarModule,
     UserModule,
   ],
-  providers: [],
+  providers: [
+    StorageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UserInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
