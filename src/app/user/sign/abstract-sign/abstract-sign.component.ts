@@ -15,6 +15,7 @@ import { errorsSelector, submittingSelector } from '../../user.selector';
 export abstract class AbstractSignComponent implements OnInit {
 
   form: FormGroup;
+
   submitting$: Observable<boolean>;
   errors$?: Observable<Errors>;
 

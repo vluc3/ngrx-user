@@ -4,6 +4,7 @@ export interface User {
   email: string;
   bio?: string;
   image?: string;
+  following?: boolean;
   token: string;
   createdAt: string;
   updatedAt: string;

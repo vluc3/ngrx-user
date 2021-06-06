@@ -11,11 +11,12 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NavBarModule } from './nav-bar/nav-bar.module';
-import { UserModule } from './user/user.module';
-
 import { StorageService } from './common/service/storage.service';
 import { UserInterceptor } from './user/user.interceptor';
+
+import { NavBarModule } from './nav-bar/nav-bar.module';
+import { UserModule } from './user/user.module';
+import { GlobalArticleModule } from './article/global-article/global-article.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UserInterceptor } from './user/user.interceptor';
     AppRoutingModule,
     NavBarModule,
     UserModule,
+    GlobalArticleModule,
   ],
   providers: [
     StorageService,
