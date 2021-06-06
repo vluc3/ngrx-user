@@ -1,0 +1,13 @@
+Angular and NgRx - Building Real Project From Scratch
+
+https://www.udemy.com/course/angular-and-ngrx-building-real-project-from-scratch
+
+ng new ngrx-user
+
+ng add @ngrx/store
+ng add @ngrx/store-devtools
+ng add @ngrx/effects
+
+git remote add origin https://github.com/vluc3/ngrx-user.git
+git branch -M main
+git push -u origin main
