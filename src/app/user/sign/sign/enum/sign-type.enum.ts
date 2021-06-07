@@ -1,4 +1,4 @@
-export enum UserSignTypeEnum {
+export enum SignTypeEnum {
   Up = 'Sign up',
   In = 'Sign in',
   Out = 'Sign out',

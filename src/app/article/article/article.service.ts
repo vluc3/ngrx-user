@@ -4,8 +4,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
 
-import { Article } from './article.model';
-import { Articles } from './articles.model';
+import { Articles } from './model/articles.model';
 
 @Injectable()
 export class ArticleService {

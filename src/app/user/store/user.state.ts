@@ -1,5 +1,5 @@
-import { Errors } from '../common/model/errors.model';
-import { User } from './user.model';
+import { Errors } from '../../common/model/errors.model';
+import { User } from '../model/user.model';
 
 export interface UserState {
   submitting: boolean;

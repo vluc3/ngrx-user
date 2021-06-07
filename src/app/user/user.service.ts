@@ -5,11 +5,11 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 
-import { User } from './user.model';
-import { UserResponse } from './user.response';
+import { User } from './model/user.model';
+import { UserResponse } from './model/user-response.model';
 
-import { SignUp } from './sign/sign-up/sign-up.model';
-import { SignIn } from './sign/sign-in/sign-in.model';
+import { SignUp } from './sign/sign-up/model/sign-up.model';
+import { SignIn } from './sign/sign-in/model/sign-in.model';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { getUserAction } from './user/user.action';
+import { getUserAction } from './user/store/user.action';
 
 @Component({
   selector: 'app-root',

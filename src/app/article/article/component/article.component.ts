@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Articles } from '../article/articles.model';
+import { Articles } from '../model/articles.model';
 
-import { getArticleAction } from './article.action';
-import { articlesSelector, errorSelector, loadingSelector } from './article.selector';
+import { getArticleAction } from '../store/article.action';
+import { articlesSelector, errorSelector, loadingSelector } from '../store/article.selector';
 
 @Component({
   selector: 'app-article',

@@ -6,17 +6,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { UserEffect } from './user.effect';
-import { userReducer } from './user.reducer';
+import { UserEffect } from './store/user.effect';
+import { userReducer } from './store/user.reducer';
 
 import { StorageService } from '../common/service/storage.service';
 import { UserService } from './user.service';
 
-import { SignComponent } from './sign/sign/sign.component';
-import { SignUpComponent } from './sign/sign-up/sign-up.component';
-import { SignInComponent } from './sign/sign-in/sign-in.component';
+import { SignComponent } from './sign/sign/component/sign.component';
+import { SignUpComponent } from './sign/sign-up/component/sign-up.component';
+import { SignInComponent } from './sign/sign-in/component/sign-in.component';
 
-import { ErrorMessagesModule } from '../common/component/error-messages/error-messages.module';
+import { ErrorMessagesModule } from '../error-messages/error-messages.module';
 
 const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},

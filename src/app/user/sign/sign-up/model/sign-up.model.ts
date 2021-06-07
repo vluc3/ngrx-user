@@ -1,4 +1,4 @@
-import { AbstractSign } from '../abstract-sign/abstract-sign.model';
+import { AbstractSign } from '../../abstract-sign/model/abstract-sign.model';
 
 export interface SignUp extends AbstractSign {
   user: {

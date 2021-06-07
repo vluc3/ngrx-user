@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
-import { AbstractSignComponent } from '../abstract-sign/abstract-sign.component';
+import { AbstractSignComponent } from '../../abstract-sign/component/abstract-sign.component';
 
-import { signUpAction } from '../../user.action';
-import { SignUp } from './sign-up.model';
+import { signInAction } from '../../../store/user.action';
+import { SignIn } from '../model/sign-in.model';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.scss']
 })
-export class SignUpComponent extends AbstractSignComponent implements OnInit {
+export class SignInComponent extends AbstractSignComponent implements OnInit {
 
   constructor(
     protected formBuilder: FormBuilder,
@@ -25,16 +25,15 @@ export class SignUpComponent extends AbstractSignComponent implements OnInit {
   }
 
   onSubmit() {
-    const signUp: SignUp = {
+    const signIn: SignIn = {
       user: this.form.value
     };
 
-    this.store.dispatch(signUpAction({signUp}));
+    this.store.dispatch(signInAction({signIn}));
   }
 
   protected createForm() {
     this.form = this.formBuilder.group({
-      username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
     });

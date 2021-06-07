@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-import { UserSignTypeEnum } from '../../user-sign-type.enum';
+import { SignTypeEnum } from '../enum/sign-type.enum';
 
-import { Errors } from '../../../common/model/errors.model';
+import { Errors } from '../../../../common/model/errors.model';
 
 @Component({
   selector: 'app-sign',
@@ -14,7 +14,7 @@ import { Errors } from '../../../common/model/errors.model';
 export class SignComponent implements OnInit {
 
   @Input()
-  userSignType: UserSignTypeEnum;
+  userSignType: SignTypeEnum;
 
   @Input()
   redirectMessage: string;
@@ -37,8 +37,8 @@ export class SignComponent implements OnInit {
   constructor() {
   }
 
-  get userSignTypeEnum(): typeof UserSignTypeEnum {
-    return UserSignTypeEnum;
+  get userSignTypeEnum(): typeof SignTypeEnum {
+    return SignTypeEnum;
   }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Errors } from '../../model/errors.model';
+import { Errors } from '../../common/model/errors.model';
 
 @Component({
   selector: 'app-error-messages',

@@ -4,12 +4,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterModule } from '@angular/router';
 
-import { ArticleEffect } from './article.effect';
-import { articleReducer } from './article.reducer';
+import { ArticleEffect } from './store/article.effect';
+import { articleReducer } from './store/article.reducer';
 
 import { ArticleService } from './article.service';
 
-import { ArticleComponent } from './article.component';
+import { ArticleComponent } from './component/article.component';
 
 @NgModule({
   declarations: [

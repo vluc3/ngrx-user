@@ -1,4 +1,4 @@
-import { User } from '../../user/user.model';
+import { User } from '../../../user/model/user.model';
 
 export interface Article {
   title: string;

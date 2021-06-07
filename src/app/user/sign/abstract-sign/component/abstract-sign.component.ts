@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { UserSignTypeEnum } from '../../user-sign-type.enum';
+import { SignTypeEnum } from '../../sign/enum/sign-type.enum';
 
-import { Errors } from '../../../common/model/errors.model';
+import { Errors } from '../../../../common/model/errors.model';
 
-import { errorsSelector, submittingSelector } from '../../user.selector';
+import { errorsSelector, submittingSelector } from '../../../store/user.selector';
 
 @Component({
   template: ''
@@ -24,8 +24,8 @@ export abstract class AbstractSignComponent implements OnInit {
     protected store: Store) {
   }
 
-  get userSignTypeEnum(): typeof UserSignTypeEnum {
-    return UserSignTypeEnum;
+  get userSignTypeEnum(): typeof SignTypeEnum {
+    return SignTypeEnum;
   }
 
   ngOnInit() {

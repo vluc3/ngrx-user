@@ -10,10 +10,10 @@ import { signUpAction, signUpSuccessAction, signUpFailureAction } from './user.a
 import { signInAction, signInSuccessAction, signInFailureAction } from './user.action';
 import { getUserAction, getUserSuccessAction, getUserFailureAction } from './user.action';
 
-import { StorageService } from '../common/service/storage.service';
-import { UserService } from './user.service';
+import { StorageService } from '../../common/service/storage.service';
+import { UserService } from '../user.service';
 
-import { User } from './user.model';
+import { User } from '../model/user.model';
 
 @Injectable()
 export class UserEffect {

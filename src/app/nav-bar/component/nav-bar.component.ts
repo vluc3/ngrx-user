@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { User } from '../user/user.model';
-import { signedInSelector, signedOutSelector, userSelector } from '../user/user.selector';
+import { User } from '../../user/model/user.model';
+import { signedInSelector, signedOutSelector, userSelector } from '../../user/store/user.selector';
 
 @Component({
   selector: 'app-nav-bar',

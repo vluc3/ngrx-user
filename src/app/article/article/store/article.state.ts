@@ -1,4 +1,4 @@
-import { Articles } from './articles.model';
+import { Articles } from '../model/articles.model';
 
 export interface ArticleState {
   loading: boolean;

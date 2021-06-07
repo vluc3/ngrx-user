@@ -1,5 +1,5 @@
-import { UserState } from './user/user.state';
-import { ArticleState } from './article/article/article.state';
+import { UserState } from './user/store/user.state';
+import { ArticleState } from './article/article/store/article.state';
 
 export interface AppState {
   user: UserState;

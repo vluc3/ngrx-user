@@ -5,8 +5,8 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { switchMap, catchError, map } from 'rxjs/operators';
 
-import { ArticleService } from './article.service';
-import { Articles } from './articles.model';
+import { ArticleService } from '../article.service';
+import { Articles } from '../model/articles.model';
 
 import { getArticleAction, getArticleFailureAction, getArticleSuccessAction } from './article.action';
 

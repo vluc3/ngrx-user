@@ -2,11 +2,11 @@ import { createAction, props } from '@ngrx/store';
 
 import { UserActionEnum } from './user-action.enum';
 
-import { User } from './user.model';
-import { Errors } from '../common/model/errors.model';
+import { User } from '../model/user.model';
+import { Errors } from '../../common/model/errors.model';
 
-import { SignUp } from './sign/sign-up/sign-up.model';
-import { SignIn } from './sign/sign-in/sign-in.model';
+import { SignUp } from '../sign/sign-up/model/sign-up.model';
+import { SignIn } from '../sign/sign-in/model/sign-in.model';
 
 export const signUpAction = createAction(
   UserActionEnum.SignUp,
