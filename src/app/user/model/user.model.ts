@@ -6,6 +6,6 @@ export interface User {
   image?: string;
   following?: boolean;
   token: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 }

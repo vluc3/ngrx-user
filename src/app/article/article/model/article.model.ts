@@ -4,8 +4,8 @@ export interface Article {
   title: string;
   slug: string;
   body: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
   tags: string[];
   description: string;
   author: User;

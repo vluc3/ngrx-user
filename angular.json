@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngrx-user"
+    }
+  },
+  "defaultProject": "ngrx-user",
+  "cli": {
+    "analytics": false
+  }
 }
